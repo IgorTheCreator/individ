@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">opVolume</th>
+          <th scope="col">presenceOfAVideoСard</th>
+          <th scope="col">cpu</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% for (let p of pc) { %>
+        <tr>
+          <th scope="row"><a href="/cabinet/<%= p.id %>"><%= p.id %></th>
+          <td><%= p.opVolume %></td>
+          <td><%= p.presenceOfAVideoСard %></td>
+          <td><%= p.cpu %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <div class="row">
+        <a href="/addPC">Добавить компьютер</a>
+        <a href="/addCabinet">Добавить кабинет</a>
+    </div>
+  </body>
+</html>
